@@ -50,15 +50,13 @@ def find_zeros():
                 positions.append([(i,j),options]) 
     return positions
     
-log = open('process.txt','w')
+
 def solution(index):
     if index < len(positions_list): 
         x = positions_list[index][0][0]
         y = positions_list[index][0][1] 
         for i in positions_list[index][1]:           
-            #print(str(x),str(y))
-            log.write('Eval:'+str(i))
-            log.write('position'+str(x)+str(y))                                           
+            #print(str(x),str(y))                                         
             if validates(i,positions_list[index][0]):
                 log.write('sol:'+str(i)+'\n')                
                 board[x][y]=i
