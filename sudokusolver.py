@@ -1,9 +1,11 @@
 
-#validates the whole table
+#validates the possible solution in the position
 def validates(value,position):
+    #validates row
     if board[position[0]].count(value) > 0:
         return False
     else:
+        #validates column
         count = 0
         for i in range(0,9):
             if board[i][position[1]] == value:
@@ -46,6 +48,7 @@ def find_zeros():
     for i in range(0,9):
         for j in range(0,9):
             if board[i][j] == 0:
+                #validate initial set of posible solution with the initial board
                 options = validateInitial((i,j))
                 positions.append([(i,j),options]) 
     return positions
